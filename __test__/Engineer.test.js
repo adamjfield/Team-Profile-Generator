@@ -19,7 +19,7 @@ test("gets github username from getGithub", () => {
     "johndoe99"
   );
 
-  expect(engineer.github).toEqual(expect.any(String));
+  expect(engineer.getGithub()).toEqual(expect.any(String));
 });
 
 test("gets role from getRole", () => {
@@ -31,4 +31,4 @@ test("gets role from getRole", () => {
   );
 
   expect(engineer.getRole()).toEqual("Engineer");
-});
+})
