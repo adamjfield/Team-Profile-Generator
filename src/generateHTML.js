@@ -1,123 +1,140 @@
-// create Manager card
-const generateManager = function (manager) {
-  return `
+const generateTeam = (team) => {
+  // create Manager card
+  const generateManager = (manager) => {
+    return `
     <div class="col mt-3">
     <div class="card mx-auto shadow" style="width: 20rem">
       <div class="card-header text-light bg-primary">
-        <h5>${manager.name}</h5>
-        <h6><i class="fas fa-mug-hot"></i> Manager</h6>
+        <h5>${manager.getName()}</h5>
+        <h6><i class="fas fa-mug-hot"></i> ${manager.getRole()}</h6>
       </div>
       <div class="card-body bg-light">
         <ul class="list-group list-group-flush border border-dark">
           <li class="list-group-item border-bottom border-dark">
-            ID: ${manager.id}
+            ID: ${manager.getId()}
           </li>
           <li class="list-group-item border-bottom border-dark">
             Email:
-            <a href="mailto:${manager.email}"
-              >${manager.email}</a
+            <a href="mailto:${manager.getEmail()}"
+              >${manager.getEmail()}</a
             >
           </li>
-          <li class="list-group-item">Office number: ${manager.officeNumber}</li>
+          <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
         </ul>
       </div>
     </div>
   </div>
   `;
-};
+  };
 
-// create Engineer card
-const generateEngineer = function (engineer) {
-  return `
+  // create Engineer card
+  const generateEngineer = (engineer) => {
+    return `
     <div class="col mt-3">
     <div class="card mx-auto shadow" style="width: 20rem">
       <div class="card-header text-light bg-primary">
-        <h5>${engineer.name}</h5>
-        <h6><i class="fas fa-glasses"></i> Engineer</h6>
+        <h5>${engineer.getName()}</h5>
+        <h6><i class="fas fa-glasses"></i> ${engineer.getRole()}</h6>
       </div>
       <div class="card-body bg-light">
         <ul class="list-group list-group-flush border border-dark">
           <li class="list-group-item border-bottom border-dark">
-            ID: ${engineer.id}
+            ID: ${engineer.getId()}
           </li>
           <li class="list-group-item border-bottom border-dark">
             Email:
-            <a href="mailto:${engineer.email}"
-              >${engineer.email}</a
+            <a href="mailto:${engineer.getEmail()}"
+              >${engineer.getEmail()}</a
             >
           </li>
-          <li class="list-group-item">GitHub: ${engineer.github}</li>
+          <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
         </ul>
       </div>
     </div>
   </div>
   `;
-};
+  };
 
-// create Intern Card
-const generateIntern = function (intern) {
-  return `
+  // create Intern Card
+  const generateIntern = (intern) => {
+    return `
     <div class="col mt-3">
     <div class="card mx-auto shadow" style="width: 20rem">
       <div class="card-header text-light bg-primary">
-        <h5>${intern.name}</h5>
-        <h6><i class="fas fa-user-graduate"></i> Intern</h6>
+        <h5>${intern.getName()}</h5>
+        <h6><i class="fas fa-user-graduate"></i> ${intern.getRole()}</h6>
       </div>
       <div class="card-body bg-light">
         <ul class="list-group list-group-flush border border-dark">
           <li class="list-group-item border-bottom border-dark">
-            ID: ${intern.id}
+            ID: ${intern.getId()}
           </li>
           <li class="list-group-item border-bottom border-dark">
             Email:
-            <a href="mailto:${intern.email}"
-              >${intern.email}</a
+            <a href="mailto:${intern.getEmail()}"
+              >${intern.getEmail()}</a
             >
           </li>
-          <li class="list-group-item">School: ${intern.school}</li>
+          <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
       </div>
     </div>
   </div>
   `;
-};
+  };
 
-// push array to page
-generateHtml = (data) => {
   // array for employee cards
-  cardArray = [];
+  const cardArray = [];
+    console.log(team);
+  cardArray.push(
+    team
+      .filter(employee => employee.getRole() === "Manager")
+      .map(manager => generateManager(manager))
+  );
+  cardArray.push(
+    team
+      .filter(employee => employee.getRole() === "Engineer")
+      .map(engineer => generateEngineer(engineer))
+  );
+  cardArray.push(
+    team
+      .filter(employee => employee.getRole() === "Intern")
+      .map(intern => generateIntern(intern))
+  );
 
-  for (let i = 0; i < data.length; i++) {
-    const employee = data[i];
-    const employeeRole = employee.getRole();
-    console.log(employeeRole);
-    
-    if (employeeRole === "Manager") {
-      const managerCard = generateManager(employee);
+  return cardArray.join("");
 
-      cardArray.push(managerCard);
-    }
+  //   for (let i = 0; i < data.length; i++) {
+  //     let employee = data[i];
+  //     const employeeRole = employee.getRole();
+  //     console.log(employeeRole);
 
-    if (employeeRole === "Engineer") {
-      const engineerCard = generateEngineer(employee);
+  //     if (employeeRole === "Manager") {
+  //       const managerCard = generateManager(employee);
 
-      cardArray.push(engineerCard);
-    }
+  //       cardArray.push(managerCard);
+  //     }
 
-    if (employeeRole === "Intern") {
-      const internCard = generateIntern(employee);
+  //     if (employeeRole === "Engineer") {
+  //       const engineerCard = generateEngineer(employee);
 
-      cardArray.push(internCard);
-    }
-  }
+  //       cardArray.push(engineerCard);
+  //     }
 
-  const employeeCards = cardArray.join("");
+  //     if (employeeRole === "Intern") {
+  //       const internCard = generateIntern(employee);
 
-  const generateTeam = generateTeamProfile(employeeCards);
-  return generateTeam;
+  //       cardArray.push(internCard);
+  //     }
+  //   }
+
+  //   const employeeCards = cardArray.join("");
+
+  //   const generateTeam = generateTeamProfile(employeeCards);
+  //   return generateTeam;
 };
 
-const generateTeamProfile = function (employeeCards) {
+module.exports = (team) => {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -150,7 +167,7 @@ const generateTeamProfile = function (employeeCards) {
       <div class="container">
         <div class="row justify-content-center">
             <!-- Team Cards go here -->
-            ${employeeCards}
+            ${generateTeam(team)}
         </div>
       </div>
     </main>
@@ -158,5 +175,3 @@ const generateTeamProfile = function (employeeCards) {
     </html>
 `;
 };
-
-module.exports = generateHtml;
