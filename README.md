@@ -1,60 +1,63 @@
+# Team Profile Generator
 
-  # Team Profile Generator
+![badge](https://img.shields.io/badge/license-None-blue)
 
-  
-  ![badge](https://img.shields.io/badge/license-None-blue)
-    
+## Description
 
-  ## Description
+An application that allows the user to add employees to generate a profile for team
 
-  An application that allows the user to add employees to generate a profile for team
+## Table of Contents
 
-  ## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Demo](#demo)
+- [Questions](#questions)
 
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  
-  <a name="installation"></a>
-  ## Installation
+<a name="installation"></a>
 
-  To install necessary dependencies, run the following command:
-    
+## Installation
+
+To install necessary dependencies, run the following command:
+
     (npm i)
 
-  <a name="usage"></a>
-  ## Usage
+<a name="usage"></a>
 
-  
+## Usage
 
+<a name="license"></a>
 
-  <a name="license"></a>
-  ## License
+## License
 
-  The application is covered under the following license:
+The application is covered under the following license:
 
-  
-  Info on License: [None](https://choosealicense.com/licenses/None)
-    
-  
+Info on License: [None](https://choosealicense.com/licenses/None)
 
+<a name="contributing"></a>
 
-  <a name="contributing"></a>
-  ## Contributing
+## Contributing
 
-  
+<a name="tests"></a>
 
-  <a name="tests"></a>
-  ## Test
+## Test
 
-  To run tests, run the following command:
-    
+To run tests, run the following command:
+
     (npm test)
 
-  <a name="questions"></a>
-  ## Questions
+<a name="demo"></a>
 
-  If you have any questions about the repo, open an issue or contact me directly at [adamjfield@gmail.com](mailto:adamjfield@gmail.com) Source Han Sans). You can find more of my work at [adamjfield](https://github.com/adamjfield).
+## Demo
+### Screenshot
+![screenshot](./assets/images/TeamGenerator-Screenshot.jpg)
+### Video Demo
+[Click for video demo of application](https://youtu.be/JRlQ6oM-Zms)
+
+<a name="questions"></a>
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at [adamjfield@gmail.com](mailto:adamjfield@gmail.com) Source Han Sans). You can find more of my work at [adamjfield](https://github.com/adamjfield).

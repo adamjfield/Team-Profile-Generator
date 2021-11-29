@@ -85,7 +85,7 @@ const generateTeam = (team) => {
 
   // array for employee cards
   const cardArray = [];
-    console.log(team);
+
   cardArray.push(
     team
       .filter(employee => employee.getRole() === "Manager")
@@ -103,35 +103,6 @@ const generateTeam = (team) => {
   );
 
   return cardArray.join("");
-
-  //   for (let i = 0; i < data.length; i++) {
-  //     let employee = data[i];
-  //     const employeeRole = employee.getRole();
-  //     console.log(employeeRole);
-
-  //     if (employeeRole === "Manager") {
-  //       const managerCard = generateManager(employee);
-
-  //       cardArray.push(managerCard);
-  //     }
-
-  //     if (employeeRole === "Engineer") {
-  //       const engineerCard = generateEngineer(employee);
-
-  //       cardArray.push(engineerCard);
-  //     }
-
-  //     if (employeeRole === "Intern") {
-  //       const internCard = generateIntern(employee);
-
-  //       cardArray.push(internCard);
-  //     }
-  //   }
-
-  //   const employeeCards = cardArray.join("");
-
-  //   const generateTeam = generateTeamProfile(employeeCards);
-  //   return generateTeam;
 };
 
 module.exports = (team) => {

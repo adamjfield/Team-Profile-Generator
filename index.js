@@ -36,6 +36,9 @@ function appMenu() {
             if (!nameInput) {
               console.log("Please enter the manger's id!");
               return false;
+            } else if (idArray.includes(nameInput)) {
+              console.log("  **id already exists. Please enter new id**");
+              return false;
             }
             return true;
           },
@@ -172,7 +175,6 @@ function appMenu() {
   }
 
   function addIntern() {
-    console.log(role);
     inquirer
       .prompt([
         {
@@ -194,6 +196,9 @@ function appMenu() {
           validate: (nameInput) => {
             if (!nameInput) {
               console.log("Please enter id!");
+              return false;
+            } else if (idArray.includes(nameInput)) {
+              console.log("  **id already exists. Please enter new id**");
               return false;
             }
             return true;
